@@ -1,4 +1,4 @@
-import { updateHeader } from "../components/Header";
+import { updateMain, setIcons } from "../components/Main";
 
 async function getWeather(location = 'Mckinney,TX') {
   const apiKey = 'CK8PXYBKEK687PAUVQAXREQWH';
@@ -10,6 +10,7 @@ async function getWeather(location = 'Mckinney,TX') {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
+    console.log('Default?')
     console.log(data);
     return data;
   } catch (error) {
@@ -24,6 +25,8 @@ async function fetchWeatherData(location) {
     console.log('Weather data:', weatherData);
     data.push(weatherData);
     //updateHeader(weatherData);
+    updateMain(weatherData);
+    setIcons(weatherData);
     return weatherData;
   } else {
     console.log('Failed to fetch weather data');
@@ -31,7 +34,6 @@ async function fetchWeatherData(location) {
 }
 
 let data = [
-
 ]
 
 export { getWeather, fetchWeatherData, data };

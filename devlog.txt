@@ -9,4 +9,6 @@
   - Logic is already set for retrieving the data and how to update the ui. 
   - Webpage layout needed to proceed. 
   - Keep things simple?
-  
+  - Download svg - https://www.amcharts.com/free-animated-svg-weather-icons/
+    - In assets folder.
+  - Tried updating webpack config to have assets show.

@@ -2,19 +2,20 @@ import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import "../../src/styles/style.scss";
 import { getWeather, fetchWeatherData, data } from './data/data';
-import { Header, updateHeader } from './components/Header';
+import { Header } from './components/Header';
+import { Main, updateMain } from './components/Main';
 const App = () => {
   useEffect(() => {
     console.log('Component mounted');
     getWeather();
     fetchWeatherData('Seattle');
-    console.log('Data:', data);
   }, []);
 
   return(
-    <div>
+    <>
       <Header />
-    </div>
+      <Main />
+    </>
   );
 };
 
