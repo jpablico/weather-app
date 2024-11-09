@@ -12,3 +12,5 @@
   - Download svg - https://www.amcharts.com/free-animated-svg-weather-icons/
     - In assets folder.
   - Tried updating webpack config to have assets show.
+  - Updated webpack to handle svgs and animated svgs.
+  - Need to finish updateMain.

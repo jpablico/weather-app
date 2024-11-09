@@ -1,61 +1,49 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Import HtmlWebpackPlugin
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // Set mode to development
-  entry: ['./src/scripts/index.js', './src/styles/style.scss'], // Add the entry point for styles assuming your entry file is located at src/index.js
+  mode: 'development',
+  entry: ['./src/scripts/index.js', './src/styles/style.scss'],
   output: {
-    path: path.resolve(__dirname, 'dist'), // Output files in the 'dist' directory
-    filename: 'bundle.js', // Bundle all JavaScript into bundle.js
-    publicPath: '/dist/', // Serve files from the 'dist' directory
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Use babel-loader for .js and .jsx files
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'], // Transpile React code
+            presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
       },
       {
-        test: /\.css$/, // Use MiniCssExtractPlugin loader for .css files
+        test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.scss$/, // Add this rule
+        test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, // Extracts CSS into separate files
-          'css-loader', // Translates CSS into CommonJS
-          'sass-loader', // Compiles Sass to CSS
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i, // Use file-loader for image files
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/',
-              publicPath: 'images/',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[hash].[ext]',
               outputPath: 'assets/weatherIcons/animated',
+              publicPath: 'assets/weatherIcons/animated',
             },
           },
         ],
@@ -64,21 +52,21 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css', // Extract CSS into separate files
+      filename: '[name].css',
     }),
-    new IgnoreEmitPlugin(['style.js']), // Ignore the extra JavaScript file generated for styles
+    new IgnoreEmitPlugin(['style.js']),
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Use your existing index.html file
-      filename: 'index.html', // Output the file in the 'dist' directory
-    }), // Add HtmlWebpackPlugin
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx'], // Resolve these extensions automatically
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'), // Serve content from 'dist' directory
+      directory: path.join(__dirname, 'dist'),
     },
-    historyApiFallback: true, // Enable HTML5 History API fallback
+    historyApiFallback: true,
   },
 };

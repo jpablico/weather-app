@@ -1,10 +1,11 @@
 import React from 'react';
 import { fetchWeatherData } from '../data/data';
+import rainyIcon from '../../assets/weatherIcons/animated/rainy-1.svg';
 
 function Main() {
   return (
     <div className="main">
-
+      <div className="icon"></div>
     </div>
   );
 }
@@ -15,7 +16,6 @@ function updateMain(weatherData) {
   main.innerHTML += `<p>${weatherData.description}</p>`;
   main.innerHTML += `<div class="icon"></div>`;
   main.innerHTML += `<p>${weatherData.currentConditions.temp}</p>`;
-
 }
 
 function setIcons(weatherData) {
@@ -25,7 +25,8 @@ function setIcons(weatherData) {
   if (!weatherData.currentConditions.icon) {
     return;
   } else if (weatherData.currentConditions.icon === 'rain') {
-    icon.src = '../../assets/weatherIcons/animated/rainy-1.svg';
+    console.log('Rainy icon');
+    icon.src = rainyIcon;
     main.appendChild(icon);
     return;
   }
