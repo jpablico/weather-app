@@ -1,0 +1,12 @@
+11.9.24 
+  - Project initialized from webpack-react-template.
+  - Boilerplate made - added date-fns.
+  - Data fetch functions made.
+    - Need to figure out how data should be used.
+     - Data will probably be sent directly to the page to update.
+     - Maybe push data into an array to lower api calls.
+      - Add logic to search through data first before making a call? 
+  - Logic is already set for retrieving the data and how to update the ui. 
+  - Webpage layout needed to proceed. 
+  - Keep things simple?
+  

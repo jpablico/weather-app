@@ -1,25 +1,21 @@
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-
-import { getWeather } from './data/data';
-
+import "../../src/styles/style.scss";
+import { getWeather, fetchWeatherData, data } from './data/data';
+import { Header, updateHeader } from './components/Header';
 const App = () => {
   useEffect(() => {
     console.log('Component mounted');
     getWeather();
-
-    (async function () {
-      console.log('Ambiguous city  ---');
-      await getWeather('Springfield'); // Test an ambiguous city name
-      console.log('Specific city ---');
-      await getWeather('Springfield, MO'); // Test specific city/state
-      console.log('Specific city ---');
-      await getWeather('Everett'); // Test specific
-    })();
-    
+    fetchWeatherData('Seattle');
+    console.log('Data:', data);
   }, []);
 
-  return <h1>Hello, World!</h1>;
+  return(
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 const container = document.getElementById('app');
