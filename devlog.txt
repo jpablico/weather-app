@@ -15,3 +15,7 @@
   - Updated webpack to handle svgs and animated svgs.
   - Need to finish updateMain.
   - Need to update logic for icons.
+11.10.24
+  - Working on the logic for icons.
+    - Logic finished. 
+  - UI work is next. 
