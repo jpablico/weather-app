@@ -23,11 +23,15 @@ function setIcons(weatherData) {
   let icon = document.createElement('img');
 
   if (!weatherData.currentConditions.icon) {
+    console.log('No icon');
     return;
   } else if (weatherData.currentConditions.icon === 'rain') {
     console.log('Rainy icon');
     icon.src = rainyIcon;
     main.appendChild(icon);
+    return;
+  } else {
+    console.log('No icon');
     return;
   }
 }

@@ -14,3 +14,4 @@
   - Tried updating webpack config to have assets show.
   - Updated webpack to handle svgs and animated svgs.
   - Need to finish updateMain.
+  - Need to update logic for icons.
