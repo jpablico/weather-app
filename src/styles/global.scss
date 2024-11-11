@@ -9,7 +9,7 @@ $accent-color: #3634cd;
 
 
 
-$primary-font: "Noto Sans JP", sans-serif;
+$primary-font: "Roboto", sans-serif;
 $font-size-body: 1rem;
 $font-size-heading: 2rem;
 $font-size-subheading: 1.5rem;
@@ -49,15 +49,18 @@ $font-side-large: 3rem;
   
 body {
 	background-color: $background-color;
-  padding: .5rem;
+	padding: 1rem;
+  //padding: .5rem;
 	color: $text-color;
-	overflow: hidden;
+	//overflow: hidden;
 	font-family: $primary-font;
+	height: auto;
+	width: 100%;
 }
 
   #app {
 	@include flex(column, flex-start, center);
 	height: 100vh;
-	width: 100vw;
+	//width: 100vw;
 	//gap: .6rem;
   }
