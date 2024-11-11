@@ -27,6 +27,7 @@ async function fetchWeatherData(location) {
     //updateHeader(weatherData);
     updateMain(weatherData);
     setIcons(weatherData);
+    console.log('Feelslike:', weatherData.currentConditions.feelslike);
     return weatherData;
   } else {
     console.log('Failed to fetch weather data');

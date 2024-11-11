@@ -19,3 +19,4 @@
   - Working on the logic for icons.
     - Logic finished. 
   - UI work is next. 
+  - Work on layout next.

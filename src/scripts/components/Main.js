@@ -22,6 +22,8 @@ function updateMain(weatherData) {
   main.innerHTML += `<p>${weatherData.description}</p>`;
   main.innerHTML += `<div class="icon"></div>`;
   main.innerHTML += `<p>${weatherData.currentConditions.temp}</p>`;
+  main.innerHTML += `<p>${weatherData.currentConditions.feelslike}</p>`;
+  main.innerHTML += `<p>${weatherData.currentConditions.humidity}</p>`;
 }
 
 function setIcons(weatherData) {
