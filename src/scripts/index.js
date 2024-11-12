@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import "../../src/styles/style.scss";
-import { getWeather, fetchWeatherData, data, searchCity } from './data/data';
+import { fetchWeatherData, searchCity } from './data/data';
 import { Header, setDate } from './components/Header';
-import { Main, updateMain } from './components/Main';
+import { Main,  } from './components/Main';
+import { WeatherCard } from './components/WeatherCard';
+
 const App = () => {
   useEffect(() => {
     setDate();
-    getWeather();
     fetchWeatherData('Seattle');
     searchCity();
   }, []);

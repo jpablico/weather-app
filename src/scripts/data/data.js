@@ -1,5 +1,3 @@
-import { updateMain, setIcons } from "../components/Main";
-
 async function getWeather(location = 'Mckinney,TX') {
   const apiKey = 'CK8PXYBKEK687PAUVQAXREQWH';
   const baseUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline`;
@@ -22,9 +20,6 @@ async function fetchWeatherData(location) {
   if (weatherData) {
     console.log('Weather data:', weatherData);
     data.push(weatherData);
-    //updateHeader(weatherData);
-    updateMain(weatherData);
-    setIcons(weatherData);
     console.log('Feelslike:', weatherData.currentConditions.feelslike);
     return weatherData;
   } else {

@@ -24,6 +24,13 @@
   - Layout being created on Figma.
     - Font added.
     - Font replaced with Roboto for now.
-    - Need to alter search container to be in another container and add settings icon.
-    - Some SCSS.
-    - Search function now shows and updates main.
+  - Need to alter search container to be in another container and add settings icon.
+  - Some SCSS.
+  - Search function now shows and updates main.
+11.12.24
+  - Clearing up code.
+  - Date now automatically sets.
+  - Reworked weather card code to be React components.
+    - Need to clean up code.
+  - Project is pretty much in a completed state.
+    - Optional to add more styling or more detail for weather.
