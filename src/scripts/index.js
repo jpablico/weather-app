@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import "../../src/styles/style.scss";
 import { fetchWeatherData, searchCity } from './data/data';
 import { Header, setDate } from './components/Header';
-import { Main,  } from './components/Main';
+import Main from './components/Main';
 import { WeatherCard } from './components/WeatherCard';
 
 const App = () => {
+  const [weatherData, setWeatherData] = useState(null);
+
   useEffect(() => {
     setDate();
-    fetchWeatherData('Seattle');
-    searchCity();
+    fetchWeatherData('Seattle').then(data => setWeatherData(data));
+    searchCity(setWeatherData);
   }, []);
 
-  return(
+  return (
     <>
       <Header />
-      <Main />
+      <Main weatherData={weatherData} />
     </>
   );
 };

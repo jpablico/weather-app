@@ -63,4 +63,4 @@ WeatherCard.propTypes = {
   }).isRequired,
 };
 
-export { WeatherCard };
+export default WeatherCard;

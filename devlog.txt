@@ -34,3 +34,5 @@
     - Need to clean up code.
   - Project is pretty much in a completed state.
     - Optional to add more styling or more detail for weather.
+  - Fixed project not showing updated search.
+  - Project completed.

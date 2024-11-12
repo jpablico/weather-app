@@ -16,7 +16,7 @@ function Header() {
       </div>
       <div className='search-container'>
         <input type='text' id='search-bar' placeholder='Search for a location'></input>
-        <span className="material-symbols-outlined">search</span>
+        <span className="material-symbols-outlined search-btn">search</span>
       </div>
     </header>
   );

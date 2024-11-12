@@ -19,27 +19,28 @@ async function fetchWeatherData(location) {
   const weatherData = await getWeather(location);
   if (weatherData) {
     console.log('Weather data:', weatherData);
-    data.push(weatherData);
-    console.log('Feelslike:', weatherData.currentConditions.feelslike);
     return weatherData;
   } else {
     console.log('Failed to fetch weather data');
   }
 }
 
-let data = [
-]
-
-
-function searchCity() {
+function searchCity(setWeatherData) {
   const search = document.getElementById('search-bar');
+  const searchBtn = document.querySelector('.search-btn');
+
   search.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       e.preventDefault();
       const city = search.value;
-      console.log('Enter key pressed');
-      fetchWeatherData(city);
+      fetchWeatherData(city).then(data => setWeatherData(data));
     }
   });
+
+  searchBtn.addEventListener('click', function () {
+    const city = search.value;
+    fetchWeatherData(city).then(data => setWeatherData(data));
+  });
 }
-export { getWeather, fetchWeatherData, data, searchCity };
+
+export { getWeather, fetchWeatherData, searchCity };

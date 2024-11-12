@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { fetchWeatherData } from '../data/data';
-import { WeatherCard } from './WeatherCard';
+import WeatherCard from './WeatherCard';
 
-function Main() {
-  const [weatherData, setWeatherData] = useState(null);
-
-  useEffect(() => {
-    async function getData() {
-      const data = await fetchWeatherData('Seattle');
-      setWeatherData(data);
-    }
-    getData();
-  }, []);
-
+function Main({ weatherData }) {
   return (
     <div className="main">
       {weatherData ? <WeatherCard weatherData={weatherData} /> : <p>Loading...</p>}
@@ -21,4 +10,8 @@ function Main() {
   );
 }
 
-export { Main };
+Main.propTypes = {
+  weatherData: PropTypes.object,
+};
+
+export default Main;
