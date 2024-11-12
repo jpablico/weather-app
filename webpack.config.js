@@ -4,7 +4,7 @@ const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const publicPath = isProduction ? '/<repository-name>/' : '/';
+const publicPath = isProduction ? '/weather-app/' : '/';
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
