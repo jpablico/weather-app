@@ -25,3 +25,5 @@
     - Font added.
     - Font replaced with Roboto for now.
     - Need to alter search container to be in another container and add settings icon.
+    - Some SCSS.
+    - Search function now shows and updates main.

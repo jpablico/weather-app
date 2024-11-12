@@ -18,8 +18,8 @@ function Main() {
 
 function updateMain(weatherData) {
   let main = document.querySelector('.main');
-  main.innerHTML = `<h2>${weatherData.address}</h2>`;
-  main.innerHTML += `<p>${weatherData.description}</p>`;
+  main.innerHTML = `<h2 class = 'location'>${weatherData.address}</h2>`;
+  main.innerHTML += `<p>${weatherData.currentConditions.conditions}</p>`;
   main.innerHTML += `<div class="icon"></div>`;
   main.innerHTML += `<p>${weatherData.currentConditions.temp}</p>`;
   main.innerHTML += `<p>${weatherData.currentConditions.feelslike}</p>`;

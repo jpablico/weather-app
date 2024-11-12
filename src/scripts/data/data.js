@@ -10,8 +10,6 @@ async function getWeather(location = 'Mckinney,TX') {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    console.log('Default?')
-    console.log(data);
     return data;
   } catch (error) {
     console.error('Error fetching weather data:', error);
@@ -37,4 +35,16 @@ async function fetchWeatherData(location) {
 let data = [
 ]
 
-export { getWeather, fetchWeatherData, data };
+
+function searchCity() {
+  const search = document.getElementById('search-bar');
+  search.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const city = search.value;
+      console.log('Enter key pressed');
+      fetchWeatherData(city);
+    }
+  });
+}
+export { getWeather, fetchWeatherData, data, searchCity };

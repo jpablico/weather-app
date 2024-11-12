@@ -1,0 +1,15 @@
+@use '../global.scss' as *;
+
+.main {
+  @include flex(column, center, center);
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+
+  .card-container {
+    @include flex(row, center, center);
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
