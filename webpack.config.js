@@ -3,13 +3,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isProduction = process.env.NODE_ENV === 'production';
+const publicPath = isProduction ? '/<repository-name>/' : '/';
+
 module.exports = {
-  mode: 'development',
+  mode: isProduction ? 'production' : 'development',
   entry: ['./src/scripts/index.js', './src/styles/style.scss'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: publicPath,
   },
   module: {
     rules: [
@@ -42,8 +45,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[hash].[ext]',
-              outputPath: 'assets/weatherIcons/animated',
-              publicPath: 'assets/weatherIcons/animated',
+              outputPath: 'assets',
+              publicPath: 'assets',
             },
           },
         ],
