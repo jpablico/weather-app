@@ -36,3 +36,5 @@
     - Optional to add more styling or more detail for weather.
   - Fixed project not showing updated search.
   - Project completed.
+11.13.24 
+  - Re-opening project to stylize.

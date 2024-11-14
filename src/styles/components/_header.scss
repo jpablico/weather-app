@@ -33,5 +33,13 @@
       border:none;
       padding: .3rem;
     }
+
+    #search-bar:focus {
+      outline: none;
+    }
+
+    .search-btn:hover {
+      cursor: pointer;
+    }
   }
 }
