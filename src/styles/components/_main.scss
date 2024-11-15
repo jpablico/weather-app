@@ -4,7 +4,7 @@
   @include flex(column, center, center);
   width: 100%;
   padding: 1rem;
-  
+  max-width: 90%;
 
   .card-container {
     @include flex(row, center, center);
