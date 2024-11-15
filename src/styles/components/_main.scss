@@ -1,16 +1,74 @@
 @use '../global.scss' as *;
 
 .main {
-  @include flex(column, center, center);
+  @include flex(row, center, center);;
+  width: 100%;
+  padding: 1rem;
+
+  .location-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: .5rem;
+    grid-row-gap: .5rem; 
+
+    width: 100%;
+    height: 99vh;
+
+    color: $text-color;
+    
+    .location-main-card {
+      @include border-effects();
+      grid-area: 1 / 1 / 5 / 5;
+  
+
+      .location {
+        font-size: 2.5rem;
+        font-weight: bold;
+        
+      }
+    }
+  
+    .location-data-card {
+      @include border-effects();
+      grid-area: 1 / 5 / 7 / 7;
+
+    }
+  
+    .location-foracast-card {
+      @include border-effects();
+      grid-area: 5 / 1 / 7 / 7;
+
+      border: solid 1px green;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// Reworking layout - 
+/* 
+.main {
+  @include flex(row, center, center);;
   width: 100%;
   padding: 1rem;
   max-width: 90%;
+  border: solid red;
+  gap: .5rem;
 
   .card-container {
     @include flex(row, center, center);
     gap: 1rem;
     width: 100%;
     flex-wrap: wrap;
+    height: auto;
+    flex: 1;
 
     .card {
       @include flex(column, center, flex-start);
@@ -33,7 +91,7 @@
       }
 
       .icon-container {
-        margin: auto;
+        margin: 1rem;
         
         .weather-icon {
           width: 100px;
@@ -41,5 +99,52 @@
         }
       }
     }
+
+    .weather-info {
+      @include flex(column, center, center);
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      background-color: $secondary-color;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      height: auto;
+
+      .currentContiions {
+        font-size: 1.5rem;
+        color: $primary-color;
+      }
+
+      .sub-card {
+        @include flex(row, center, center);
+        gap: 1rem;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .sub-card-item {
+          @include flex(column, center, center);
+          padding: 1rem;
+          border-radius: 10px;
+          background-color: green;
+          color: white;
+          
+          height: auto;
+
+          .sub-card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $primary-color;
+          }
+
+          .sub-card-value {
+            font-size: 1.2rem;
+            color: $primary-color;
+          }
+      }
+    }
   }
 }
+}
+
+*/

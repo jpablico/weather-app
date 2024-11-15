@@ -38,3 +38,7 @@
   - Project completed.
 11.13.24 
   - Re-opening project to stylize.
+11.15.23
+  - Created a test branch to test sytling out.
+  - Reworking main to be a grid.
+    - Previous SCSS is cc out.

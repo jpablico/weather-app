@@ -35,17 +35,26 @@ function WeatherCard({ weatherData }) {
   const iconSrc = getIconSrc(weatherData.currentConditions.icon);
 
   return (
-    <div className="card-container">
-      <div className="card">
+    <div className="location-container">
+      <div className="location-main-card">
         <h2 className="location">{weatherData.address}</h2>
         <p className="condition">{weatherData.currentConditions.conditions}</p>
         <div className="icon-container">
           {iconSrc && <img src={iconSrc} alt={weatherData.currentConditions.icon} className='weather-icon'/>}
         </div>
-        <p>Temperature: {weatherData.currentConditions.temp}</p>
-        <p>Feels like: {weatherData.currentConditions.feelslike}</p>
-        <p>Humidity: {weatherData.currentConditions.humidity}</p>
       </div>
+      <div className="location-data-card">
+          <h3 className='currentConditions'>Current Conditions</h3>
+            <div className="sub-card">
+              <div className="sub-card-item">
+                <h5 className='sub-card-title'>Temperature</h5>
+                <p>{weatherData.currentConditions.temp}</p>
+              </div>
+            </div>
+            
+            <p>Feels like: {weatherData.currentConditions.feelslike}</p>
+            <p>Humidity: {weatherData.currentConditions.humidity}</p>
+        </div>
     </div>
   );
 }

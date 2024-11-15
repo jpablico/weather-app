@@ -1,6 +1,6 @@
 $text-color: #1f1f1f;
 $text-color-light: #ffffff;
-$background-color: #bbbbbb;
+$background-color: #ededed;
 $primary-color: #dfdbd3;
 $secondary-color: #1e287d;
 $accent-color: #3634cd;
@@ -40,6 +40,16 @@ $font-side-large: 3rem;
 	font-size: $size;
   }
   
+
+	@mixin border-effects() {
+	border-radius: 1rem;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+	padding: .5rem;
+	}
+	
+	@mixin button-styles() {
+	}
   // Global Styles
   * {
 	box-sizing: border-box;
