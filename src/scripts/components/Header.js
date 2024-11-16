@@ -14,9 +14,21 @@ function Header() {
           <h2 className='date'></h2>
         </div>
       </div>
-      <div className='search-container'>
-        <input type='text' id='search-bar' placeholder='Search for a location'></input>
-        <span className="material-symbols-outlined search-btn">search</span>
+      <div className='utility-container'>
+        <div className='search-container'>
+          <input type='text' id='search-bar' placeholder='Search for a location'></input>
+          <span className="material-symbols-outlined search-btn">search</span>
+        </div>
+        <div className='settings-container'>
+          <span className='material-symbols-outlined settings-cog'>settings</span>
+          <div className='settings-dropdown'>
+            <ul>
+              <li>Settings</li>
+              <li>Profile</li>
+              <li>Logout</li>
+            </ul>
+          </div>
+         </div>
       </div>
     </header>
   );
@@ -35,4 +47,14 @@ function setDate() {
   date.textContent = currentDate();
 }
 
-export { Header, setDate };
+function toggleSettings() {
+  const settingsCog = document.querySelector('.settings-cog');
+  const settingsDropdown = document.querySelector('.settings-dropdown');
+  settingsCog.addEventListener('click', () => {
+    console.log('settings toggle');
+    settingsDropdown.classList.toggle('active');
+  });
+}
+
+
+export { Header, setDate, toggleSettings };

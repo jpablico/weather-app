@@ -21,25 +21,61 @@
       font-size: $font-size-small;
     }
   }  
-  .search-container {
+
+  .utility-container {
     @include flex(row, center, center);
-    background-color: white;
-    
-    height: auto;
-    border-radius: .3rem;
-    padding: .3rem;
+    gap: .5rem;
 
-    #search-bar {
-      border:none;
+    .search-container {
+      @include flex(row, center, center);
+      background-color: white;
+      
+      height: auto;
+      border-radius: .3rem;
       padding: .3rem;
+  
+      #search-bar {
+        border:none;
+        padding: .3rem;
+      }
+  
+      #search-bar:focus {
+        outline: none;
+      }
+  
+      .search-btn:hover {
+        cursor: pointer;
+      }
     }
 
-    #search-bar:focus {
-      outline: none;
-    }
+    .settings-container {
 
-    .search-btn:hover {
-      cursor: pointer;
+      .settings-cog {
+        cursor: pointer;
+      }
+
+      .settings-cog:hover {
+        color: $primary-color;
+      }
+
+      .settings-dropdown {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border-radius: .3rem;
+        padding: .5rem;
+        z-index: 1;
+        top: 3rem;
+        right: 0;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+      }
+
+      .settings-dropdown.active {
+        display: block;
+        padding: .5rem;
+        color: black;
+        text-decoration: none;
+      }
     }
   }
 }

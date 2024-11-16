@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import "../../src/styles/style.scss";
 import { fetchWeatherData, searchCity } from './data/data';
-import { Header, setDate } from './components/Header';
+import { Header, setDate, toggleSettings } from './components/Header';
 import Main from './components/Main';
-import { WeatherCard } from './components/WeatherCard';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -13,6 +12,7 @@ const App = () => {
     setDate();
     fetchWeatherData('Seattle').then(data => setWeatherData(data));
     searchCity(setWeatherData);
+    toggleSettings();
   }, []);
 
   return (

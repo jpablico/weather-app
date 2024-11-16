@@ -38,7 +38,11 @@
   - Project completed.
 11.13.24 
   - Re-opening project to stylize.
-11.15.23
+11.15.24
   - Created a test branch to test sytling out.
   - Reworking main to be a grid.
     - Previous SCSS is cc out.
+11.16.24
+  - Added a settings menu to header with dropdown menu.
+    - JS added.
+    
