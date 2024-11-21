@@ -46,14 +46,23 @@ function WeatherCard({ weatherData }) {
       <div className="location-data-card">
           <h3 className='currentConditions'>Current Conditions</h3>
             <div className="sub-card">
+
               <div className="sub-card-item">
                 <h5 className='sub-card-title'>Temperature</h5>
-                <p>{weatherData.currentConditions.temp}</p>
+                <p>{weatherData.currentConditions.temp}°F</p>
               </div>
+
+              <div className="sub-card-item">
+                <h5 className='sub-card-title'>Feels like:</h5>
+                <p>{weatherData.currentConditions.feelslike}°F</p>
+              </div>
+
+              <div className="sub-card-item">
+                <h5 className='sub-card-title'>Humidity</h5>
+                <p>{weatherData.currentConditions.humidity}°F</p>
+              </div>
+
             </div>
-            
-            <p>Feels like: {weatherData.currentConditions.feelslike}</p>
-            <p>Humidity: {weatherData.currentConditions.humidity}</p>
         </div>
     </div>
   );

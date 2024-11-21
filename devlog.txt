@@ -45,4 +45,5 @@
 11.16.24
   - Added a settings menu to header with dropdown menu.
     - JS added.
-    
+11.20.24
+  - Added a bit of subitems and degree unicode.
