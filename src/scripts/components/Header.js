@@ -1,14 +1,13 @@
 import React from 'react';
 import "../../styles/style.scss";
 import userIcon from '../../assets/portraitJoshP.jpeg';
-import userIcon2 from '../../assets/Homecooked - Logo v1.png'
 
 function Header() {
   return (
     <header id='header'>
       <div className='user-container'>
         <div className='user-icon'>
-          <img src = { userIcon2 } alt='User Icon' className='user-icon'/>
+          <img src = { userIcon } alt='User Icon' className='user-icon'/>
         </div>
         <div className='user-info'>
           <h5 className='user-name'>Hey, Josh</h5>
