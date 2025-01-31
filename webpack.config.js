@@ -8,7 +8,7 @@ const publicPath = isProduction ? '/weather-app/' : '/';
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  entry: ['./src/scripts/index.js', './src/styles/style.scss'],
+  entry: ['./src/scripts/index.jsx', './src/styles/style.scss'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',

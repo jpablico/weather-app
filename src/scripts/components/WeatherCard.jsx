@@ -37,14 +37,33 @@ function WeatherCard({ weatherData }) {
   return (
     <div className="card-container">
       <div className="card">
-        <h2 className="location">{weatherData.address}</h2>
-        <p className="condition">{weatherData.currentConditions.conditions}</p>
-        <div className="icon-container">
-          {iconSrc && <img src={iconSrc} alt={weatherData.currentConditions.icon} className='weather-icon'/>}
+        <div className="card-header">
+          <div className="location-container">
+            <h2 className="location">{weatherData.address}</h2>
+            <p className="condition">{weatherData.currentConditions.conditions}</p>
+          </div>
+
+          <div className="icon-container">
+            {iconSrc && <img src={iconSrc} alt={weatherData.currentConditions.icon} className='weather-icon'/>}
+          </div>
         </div>
-        <p>Temperature: {weatherData.currentConditions.temp}</p>
-        <p>Feels like: {weatherData.currentConditions.feelslike}</p>
-        <p>Humidity: {weatherData.currentConditions.humidity}</p>
+          
+        <div className="card-body">
+          <div className="card-content">
+            <h5 className='card-title'>Temperature:</h5>
+            <h2 className="card-subtitle">{weatherData.currentConditions.temp}</h2>
+          </div>
+          
+          <div className="card-content">
+            <h5 className='card-title'>Feels like:</h5>
+            <h2 className="card-subtitle">{weatherData.currentConditions.feelslike}</h2>
+          </div>
+
+          <div className="card-content">
+            <h5 className='card-title'>Humidity:</h5>
+            <h2 className="card-subtitle">{weatherData.currentConditions.humidity}</h2>
+          </div>
+        </div>  
       </div>
     </div>
   );

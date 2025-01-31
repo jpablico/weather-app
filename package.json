@@ -2,7 +2,7 @@
 	"name": "webpack-template",
 	"version": "1.0.0",
 	"description": "A reusable template for Webpack with Prettier and ESLint.",
-	"main": "index.js",
+	"main": "index.jsx",
 	"scripts": {
 		"install-dependencies": "npm install --save-dev eslint @eslint/js eslint-plugin-react eslint-plugin-prettier prettier globals webpack webpack-cli webpack-dev-server mini-css-extract-plugin css-loader sass sass-loader babel-loader @babel/core @babel/preset-env @babel/preset-react file-loader html-webpack-plugin ignore-emit-webpack-plugin",
 		"lint": "eslint .",
